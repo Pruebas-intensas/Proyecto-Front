@@ -34,9 +34,13 @@ export class LoginComponent implements OnInit{
                 response = { ...response, ...data }
             },
             error: err => {
+                console.log("err:", err)
             },
             complete: () => {
-                const { message } = response.body;
+                console.log("response:", response)
+                if (response.status == 200) {
+                    this.router.navigate(['/home']);
+                }
             }
         });
     }
