@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CrudProductosComponent } from './views/crud-productos/crud-productos.component';
 import { ModalAgregarProductoComponent } from './components/modal-agregar-producto/modal-agregar-producto.component';
 import { ModalEditarProductoComponent } from './components/modal-editar-producto/modal-editar-producto.component';
+import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ModalEditarProductoComponent } from './components/modal-editar-producto
     RegisterComponent,
     CrudProductosComponent,
     ModalAgregarProductoComponent,
-    ModalEditarProductoComponent
+    ModalEditarProductoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+<div class="container">
+    <hr>
+    <h2 class="m-3">Producto dispobiles</h2>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col-xl-4 col-md-6 col-sm-12" *ngFor="let prod of productos" style="height: 100%;">
+            <div class="card o-hidden border-0 shadow-lg my-3">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <div class="h2 text-gray-900 mb-2">{{prod.nombre}}</div>
+                                <div class="text-gray-900">
+                                    aca hay una descripcion con blaba y weas raras queseyo. disen que ai una foto tambien o algo asi me contaron a mi
+                                </div>
+                                <div class="h5 text-gray-900 mt-2 mb-0">Precio inicial: ${{prod.precio_minimo}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
