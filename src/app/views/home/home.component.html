@@ -1,10 +1,11 @@
 <div class="container">
     <hr>
-    <h2 class="m-3">Producto dispobiles</h2>
+    <h2 class="m-3">Productos disponibles</h2>
     <hr>
     <div class="row justify-content-center">
+
         <div class="col-xl-4 col-md-6 col-sm-12" *ngFor="let prod of productos" style="height: 100%;">
-            <div class="card o-hidden border-0 shadow-lg my-3">
+            <div class="card o-hidden border-0 shadow-lg my-3" [routerLink]="['/detalle', prod.id]">
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="p-5">

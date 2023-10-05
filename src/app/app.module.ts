@@ -11,6 +11,7 @@ import { CrudProductosComponent } from './views/crud-productos/crud-productos.co
 import { ModalAgregarProductoComponent } from './components/modal-agregar-producto/modal-agregar-producto.component';
 import { ModalEditarProductoComponent } from './components/modal-editar-producto/modal-editar-producto.component';
 import { HomeComponent } from './views/home/home.component';
+import { DetalleProductoComponent } from './views/detalle-producto/detalle-producto.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './views/home/home.component';
     CrudProductosComponent,
     ModalAgregarProductoComponent,
     ModalEditarProductoComponent,
-    HomeComponent
+    HomeComponent,
+    DetalleProductoComponent
   ],
   imports: [
     BrowserModule,

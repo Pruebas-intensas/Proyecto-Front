@@ -1,0 +1,61 @@
+<div class="container-fluid" *ngIf="render">
+    <h2 class="m-3">Producto: {{producto.nombre}}</h2>
+    <hr>
+    <div class="row">
+
+        <div class="col-xl-6 col-12">
+            <div class="card o-hidden border-0 shadow-lg my-3">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <div class="h3 text-gray-900 mb-2">Descripción</div>
+                                <hr>
+                                <div class="text-gray-900 mb-2">{{producto.descripcion}}</div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="h5 text-gray-900 mb-2">Precio inicial</div>
+                                    <div class="text-gray-900 mb-2">${{producto.precio_minimo}}</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="h5 text-gray-900 mb-2">Precio actual</div>
+                                    <div class="text-gray-900 mb-2">${{oferta_max}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-12">
+            <div class="card o-hidden border-0 shadow-lg my-3">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <div class="h3 text-gray-900 mb-4">Hacer oferta</div>
+                            </div>
+                            <form class="user" [formGroup]="ofertaForm" (ngSubmit)="hacer_oferta()">
+                                <div class="form-group">
+                                    <input type="number" class="form-control form-control-user" formControlName="monto" name="monto" step="500">
+                                    <div *ngIf="ofertaForm.controls['monto'].invalid && (ofertaForm.controls['monto'].dirty || ofertaForm.controls['monto'].touched)" 
+                                        class="alert alert-danger">
+                                        <p *ngIf="ofertaForm.controls['monto'].errors?.['required']">
+                                            monto invalido
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-success btn-block" type="submit">
+                                    Meterle plata
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
