@@ -1,0 +1,21 @@
+.descripcionProducto {
+    max-height: 100px; /* Establece la altura máxima que deseas antes de ocultar el texto */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto oculto */
+    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+    vertical-align: middle; 
+    text-align: right;
+    max-width: 100px;
+  }
+  
+  .ver-mas {
+    display: none; /* Oculta inicialmente el botón "Ver más" */
+  }
+  
+  .descripcionProducto.expandida {
+    max-height: none; /* Cuando se expande, elimina la altura máxima para mostrar todo el texto */
+  }
+  
+  .descripcionProducto.expandida + .ver-mas {
+    display: none; /* Oculta el botón "Ver más" cuando la descripción está expandida */
+  }

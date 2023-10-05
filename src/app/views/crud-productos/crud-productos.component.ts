@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../service/producto.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-crud-productos',
   templateUrl: './crud-productos.component.html',
   styleUrls: ['./crud-productos.component.css']
 })
-export class CrudProductosComponent {
+export class CrudProductosComponent implements AfterViewInit{
 
   productos: any = [];
   nombreProducto: string = '';
@@ -28,6 +29,27 @@ export class CrudProductosComponent {
         //console.log(this.productos);
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    //console.log('ngOnInit');
+    function toggleButtonContent() {
+      if (window.innerWidth <= 1800) { // Cambia el ancho según tus necesidades
+        $('.icon').show();
+        $('.text').hide();
+      } else {
+        $('.icon').hide();
+        $('.text').show();
+      }
+    }
+
+    // Ejecuta la función al cargar la página y en cambios de tamaño de ventana
+    toggleButtonContent();
+    window.addEventListener('resize', toggleButtonContent);
+    // ejecuta una vez que se haya cargado la página
+    window.onload = toggleButtonContent;
+
+    
   }
 
   seleccionarProducto(nombre: string, precio_minimo: number, descripcion: string, id: number){
@@ -61,3 +83,4 @@ export class CrudProductosComponent {
   }
 
 }
+

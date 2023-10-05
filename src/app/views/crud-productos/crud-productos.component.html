@@ -14,7 +14,7 @@
 
 
                 <!-- Page Heading -->
-                <div class="h2 mt-5 mb-2 font-weight-bold text-gray-800" style ="width:80%; margin-left:10%; margin-right:10%;">Productos</div>
+                <div class="h2 mt-5 mb-2 font-weight-bold text-gray-800" style ="width:80%; margin-left:10%; margin-right:10%;">Administración de Productos</div>
                 <p class="mb-4" style ="width:80%; margin-left:10%; margin-right:10%;">
                     Aquí puede ver los productos de la página, modificarlos, agregar nuevos o eliminar.</p>
 
@@ -40,14 +40,19 @@
                                     <tr *ngFor="let producto of productos">
                                         <td style="vertical-align: middle;">{{producto?.nombre}}</td>
                                         <td style="vertical-align: middle; text-align: right;">${{producto?.precio_minimo}}</td>
-                                        <td style="vertical-align: middle; text-align: right">{{producto?.descripcion}}</td>
-
+                                        <td class="descripcionProducto">{{producto?.descripcion}}</td>
                                         <td>
                                             <button class="btn btn-md btn-success" style ="width:35%; margin-left: 10%; margin-right: 5%;" 
                                                     data-bs-target="#modal-editar-producto" data-bs-toggle="modal" 
-                                                    (click)="seleccionarProducto(producto.nombre, producto.precio_minimo, producto.descripcion, producto.id)">Editar</button>
+                                                    (click)="seleccionarProducto(producto.nombre, producto.precio_minimo, producto.descripcion, producto.id)">
+                                                    <span class="icon">✏️</span> <!-- Icono visible en pantallas anchas -->
+                                                    <span class="text">Editar</span> <!-- Texto visible en pantallas anchas -->
+                                            </button>
                                             <button class="btn btn-md btn-danger mr-2 ml-2" style ="width:35%; margin-left: 10%; margin-right: 5%;"
-                                                    (click)="eliminarProducto(producto.id)">Eliminar</button>
+                                                    (click)="eliminarProducto(producto.id)">
+                                                    <span class="text">Eliminar</span> <!-- Texto visible en pantallas anchas -->
+                                                    <span class="icon">🗑️</span> <!-- Icono visible en pantallas angostas -->    
+                                            </button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -70,7 +75,3 @@
 <app-modal-agregar-producto></app-modal-agregar-producto>
 <app-modal-editar-producto [nombreProducto]="nombreProducto" [precioMinimo]="precioMinimo" 
 [descripcionProducto]="descripcionProducto" [idProducto]="idProducto"></app-modal-editar-producto>
-
-```
-```
-

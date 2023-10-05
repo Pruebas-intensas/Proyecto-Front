@@ -1,6 +1,6 @@
 <div class="modal fade" id="modal-editar-producto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="exampleModalLabel">Editar Producto</h2>
@@ -10,16 +10,16 @@ aria-hidden="true">
             </div>
             <table class="table" style="width:80%; margin-left:10%; margin-right:10%">
                 <tr>
-                    <td style="vertical-align: middle;">Nombre</td>
+                    <td style="vertical-align: middle; width:15%">Nombre</td>
                     <td><input type="text" class="form-control" aria-label="Nombre del producto" id="nombreProducto" [(ngModel)]="nombreProducto"></td>                
                 </tr>
                 <tr>
-                    <td style="vertical-align: middle;">Precio Mínimo</td>
+                    <td style="vertical-align: middle; width:15%">Precio Mínimo</td>
                     <td><input type="text" class="form-control" aria-label="Precio minimo" id="precioMinimo" [(ngModel)]="precioMinimo"></td>                
                 </tr>
                 <tr>
-                    <td style="vertical-align: middle;">Descripción</td>
-                    <td><textarea type="text" class="form-control" style="resize: none;" aria-label="Descripcion" id="descripcionProducto" rows="4" 
+                    <td style="vertical-align: middle; width:15%">Descripción</td>
+                    <td><textarea type="text" class="form-control" style="resize: none;" aria-label="Descripcion" id="descripcionProducto" rows="7" 
                         [(ngModel)]="descripcionProducto"></textarea></td>          
                 </tr>
             </table>
