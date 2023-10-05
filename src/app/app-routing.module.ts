@@ -9,6 +9,7 @@ import { HomeComponent } from './views/home/home.component';
 import { DetalleProductoComponent } from './views/detalle-producto/detalle-producto.component';
 
 
+
 const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'productos', component: CrudProductosComponent },

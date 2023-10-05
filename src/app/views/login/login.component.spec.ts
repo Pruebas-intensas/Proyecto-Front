@@ -32,8 +32,19 @@ describe('LoginComponent', () => {
   });
 
   it('should validate correct user and password', () => {
-	component.loginForm.controls['user'].setValue('test@gmail.com');
-	component.loginForm.controls['password'].setValue('1234');
+	component.loginForm = formBuilder.group({
+		email: 'rtallax@gmail.com',
+		password: '123'
+	})
+	fixture.nativeElement.querySelector('button').click();
+	expect(component.loginForm.valid).toBeTruthy();
+  });
+
+  it('should validate correct user and password', () => {
+	component.loginForm = formBuilder.group({
+		email: 'no@existo.com',
+		password: '123'
+	})
 	fixture.nativeElement.querySelector('button').click();
 	expect(component.loginForm.valid).toBeTruthy();
   });
