@@ -36,8 +36,7 @@ export class LoginComponent implements OnInit{
             error: err => {
             },
             complete: () => {
-                const { message, userdata, token } = response.body;
-                this.dataUsuario = response.body.userdata;
+                const { message } = response.body;
             }
         });
     }
