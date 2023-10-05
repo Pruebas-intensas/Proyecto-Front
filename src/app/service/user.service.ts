@@ -15,8 +15,8 @@ export class UserService {
         return this.http.request(req);
     }
 
-    register(email: string, password: string,nombre: string): Observable<any>{
-        const req = new HttpRequest('POST',`${environment.url_back}/usuario/register`, { email, password, nombre });
+    register(correo: string, password: string,nombre: string): Observable<any>{
+        const req = new HttpRequest('POST',`${environment.url_back}/usuario`, { correo, password, nombre });
         return this.http.request(req);
     }
 }
