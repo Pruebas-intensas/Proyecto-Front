@@ -34,20 +34,22 @@ export class ProductoService {
     return this.http.request(req);
   }
 
-  crear_producto(nombre: string, precio_minimo:number, descripcion: string){
+  crear_producto(nombre: string, precio_minimo:number, descripcion: string, fecha_termino: string){
     const req = new HttpRequest('POST', `${environment.url_back}/producto/`, {
       nombre: nombre,
       precio_minimo: precio_minimo,
-      descripcion: descripcion
+      descripcion: descripcion,
+      fecha_termino: fecha_termino
     });
     return this.http.request(req);
   } 
 
-  editar_producto(id: number, nombre: string, precio_minimo:number, descripcion: string){
+  editar_producto(id: number, nombre: string, precio_minimo:number, descripcion: string, fecha_termino: string){
     const req = new HttpRequest('PUT', `${environment.url_back}/producto?id=${id}`, {
       nombre: nombre,
       precio_minimo: precio_minimo,
-      descripcion: descripcion
+      descripcion: descripcion,
+      fecha_termino: fecha_termino
     });
     return this.http.request(req);
   }

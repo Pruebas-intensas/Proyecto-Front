@@ -16,6 +16,9 @@ export class CrudProductosComponent implements AfterViewInit{
   precioMinimo: number = 0;
   descripcionProducto: string = '';
   idProducto: number = 0;
+  fechaTermino: string = '';
+
+  fechaActual: string = new Date().toISOString().slice(0, 10);
 
   constructor(private productoService: ProductoService) { 
     let response: any;
@@ -28,7 +31,7 @@ export class CrudProductosComponent implements AfterViewInit{
       },
       complete: () => {
         this.productos = response.body;
-        //console.log(this.productos);
+        console.log(this.productos);
       }
     });
   }
@@ -52,11 +55,12 @@ export class CrudProductosComponent implements AfterViewInit{
     setTimeout(toggleButtonContent, 100); 
   }
 
-  seleccionarProducto(nombre: string, precio_minimo: number, descripcion: string, id: number){
+  seleccionarProducto(nombre: string, precio_minimo: number, descripcion: string, id: number, fecha_termino: string){
     this.nombreProducto = nombre;
     this.precioMinimo = precio_minimo;
     this.descripcionProducto = descripcion;
     this.idProducto = id;
+    this.fechaTermino = fecha_termino;
   }
 
   eliminarProducto(id: number){

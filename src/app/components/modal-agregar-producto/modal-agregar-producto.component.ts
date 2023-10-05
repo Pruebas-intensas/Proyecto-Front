@@ -15,15 +15,16 @@ export class ModalAgregarProductoComponent {
       const nombre = (<HTMLInputElement>document.getElementById('nombreProducto')).value;
       const precio_minimo = (<HTMLInputElement>document.getElementById('precioMinimo')).value;
       const descripcion = (<HTMLInputElement>document.getElementById('descripcionProducto')).value;
+      const fecha_termino= (<HTMLInputElement>document.getElementById('fechaTermino')).value;
 
-      if (!nombre || !precio_minimo || !descripcion) {
+      if (!nombre || !precio_minimo || !descripcion || !fecha_termino) {
         alert('Ingrese todos los datos');
         return;
       }
       nombre.trim();
 
       //call the service method crear_producto
-      this.productoService.crear_producto(nombre, parseInt(precio_minimo), descripcion).subscribe((data: any) => {
+      this.productoService.crear_producto(nombre, parseInt(precio_minimo), descripcion, fecha_termino).subscribe((data: any) => {
         if (data.error) {
           alert(data.error);
         } else {

@@ -12,19 +12,20 @@ export class ModalEditarProductoComponent {
   @Input() precioMinimo: number = 0;
   @Input() descripcionProducto: string = '';
   @Input() idProducto: number = 0;
+  @Input() fechaTermino: string = '';
 
   
   constructor(private productoService: ProductoService) {  
   }
 
   editarProducto(){
-    if (!this.nombreProducto || !this.precioMinimo || !this.descripcionProducto) {
+    if (!this.nombreProducto || !this.precioMinimo || !this.descripcionProducto || !this.fechaTermino) {
       alert('Ingrese todos los datos');
       return;
     }
     this.nombreProducto.trim();
 
-    this.productoService.editar_producto(this.idProducto, this.nombreProducto, parseInt(this.precioMinimo.toString()), this.descripcionProducto).subscribe((data: any) => {
+    this.productoService.editar_producto(this.idProducto, this.nombreProducto, parseInt(this.precioMinimo.toString()), this.descripcionProducto, this.fechaTermino).subscribe((data: any) => {
       if (data.error) {
         alert(data.error);
       } else {
