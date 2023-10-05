@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit{
 
     login() {
         let response: any = {};
+        let userLogged = 'invalid_form'
+
         const data = this.loginForm.value;
         this.user.login(data.email, data.password).subscribe({
             next: data => {
@@ -40,6 +42,9 @@ export class LoginComponent implements OnInit{
                 console.log("response:", response)
                 if (response.status == 200) {
                     this.router.navigate(['/home']);
+                    userLogged = 'login_valid'
+                } else {
+                    userLogged = 'login_invalid'
                 }
             }
         });

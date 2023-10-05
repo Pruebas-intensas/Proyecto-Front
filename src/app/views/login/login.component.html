@@ -14,7 +14,7 @@
                                     <div class="h2 text-gray-900 mb-2">El rincón del olvido</div>
                                     <div class="text-gray-900 mb-2">Sistema de remates y subastas</div>
                                 </div>
-                                <form class="user" [formGroup]="loginForm">
+                                <form class="user" [formGroup]="loginForm" (ngSubmit)="login()">
                                     <div class="form-group">
                                         <input type="email" class="form-control form-control-user"
                                             id="exampleInputEmail" aria-describedby="emailHelp"
@@ -37,7 +37,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <button id="myBtn" class="btn-primary btn-user btn-block" (click)="login()">
+                                    <button id="myBtn" class="btn-primary btn-user btn-block">
                                         Iniciar sesión
                                     </button>
                                     <script>
