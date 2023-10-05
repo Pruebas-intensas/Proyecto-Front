@@ -7,7 +7,6 @@ import * as $ from 'jquery';
   selector: 'app-crud-productos',
   templateUrl: './crud-productos.component.html',
   styleUrls: ['./crud-productos.component.css'],
-  providers: [ProductoService]
 })
 export class CrudProductosComponent implements AfterViewInit{
 

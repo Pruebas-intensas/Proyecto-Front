@@ -9,7 +9,7 @@ import { filter, map } from "rxjs/operators";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    constructor (private router: Router, private activatedRoute:    ActivatedRoute, private titleService: Title) {
+    constructor (private router: Router, private activatedRoute: ActivatedRoute, private titleService: Title) {
         this.router.events.pipe(
             filter(event => event instanceof NavigationEnd),
             map(() => {
@@ -17,7 +17,7 @@ export class AppComponent {
                 while (child) {
                     if (child.firstChild) {
                         child = child.firstChild;
-                    } else if (child.snapshot.data &&    child.snapshot.data['title']) {
+                    } else if (child.snapshot.data && child.snapshot.data['title']) {
                         return child.snapshot.data['title'];
                     } else {
                         return null;
