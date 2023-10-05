@@ -33,4 +33,29 @@ export class ProductoService {
     });
     return this.http.request(req);
   }
+
+  crear_producto(nombre: string, precio_minimo:number, descripcion: string){
+    const req = new HttpRequest('POST', `${environment.url_back}/producto/`, {
+      nombre: nombre,
+      precio_minimo: precio_minimo,
+      descripcion: descripcion
+    });
+    return this.http.request(req);
+  } 
+
+  editar_producto(id: number, nombre: string, precio_minimo:number, descripcion: string){
+    const req = new HttpRequest('PUT', `${environment.url_back}/producto?id=${id}`, {
+      nombre: nombre,
+      precio_minimo: precio_minimo,
+      descripcion: descripcion
+    });
+    return this.http.request(req);
+  }
+
+  eliminar_producto(id: number){
+    const req = new HttpRequest('DELETE', `${environment.url_back}/producto?id=${id}`, {
+      responseType: 'json'
+    });
+    return this.http.request(req);
+  }
 }

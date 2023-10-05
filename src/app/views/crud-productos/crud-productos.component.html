@@ -21,7 +21,7 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4" style ="width:80%; margin-left:10%; margin-right:10%;">
                     <div class="card-body">
-                        <button id="myBtn" class="btn btn-lg btn-primary mb-2" style ="margin-left:10%;" data-target="#modal-agregar-producto" data-toggle="modal">
+                        <button id="myBtn" class="btn btn-lg btn-primary mb-2" style ="margin-left:10%;" data-bs-target="#modal-agregar-producto" data-bs-toggle="modal">
                             Agregar Producto
                         </button>
                         
@@ -30,18 +30,24 @@
                                 cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th class="text-gray-800" style="vertical-align: bottom; width:43%; text-align: center; font-size: 20px">Nombre</th>
-                                        <th class="text-gray-800" style="vertical-align: bottom; width:23%; text-align: center; font-size: 20px">Precio Mínimo</th>
-                                        <th style="vertical-align: bottom; width:33%"></th>
+                                        <th class="text-gray-800" style="vertical-align: bottom; width:25%; text-align: center; font-size: 20px">Nombre</th>
+                                        <th class="text-gray-800" style="vertical-align: bottom; width:15%; text-align: center; font-size: 20px">Precio Mínimo</th>
+                                        <th class="text-gray-800" style="vertical-align: bottom; width:35%; text-align: center; font-size: 20px">Descripción</th>
+                                        <th style="vertical-align: bottom; width:25%"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let producto of productos">
-                                        <td style="vertical-align: middle; margin-left: 20%;">{{producto.nombre}}</td>
-                                        <td style="vertical-align: middle; text-align: right;">{{producto.precio_minimo}}</td>
+                                        <td style="vertical-align: middle;">{{producto?.nombre}}</td>
+                                        <td style="vertical-align: middle; text-align: right;">${{producto?.precio_minimo}}</td>
+                                        <td style="vertical-align: middle; text-align: right">{{producto?.descripcion}}</td>
+
                                         <td>
-                                            <button class="btn btn-md btn-success" style ="width:30%; margin-left: 10%; margin-right: 10%;" >Editar</button>
-                                            <button class="btn btn-md btn-danger mr-2 ml-2" style ="width:30%; margin-left: 10%; margin-right: 10%;">Eliminar</button>
+                                            <button class="btn btn-md btn-success" style ="width:35%; margin-left: 10%; margin-right: 5%;" 
+                                                    data-bs-target="#modal-editar-producto" data-bs-toggle="modal" 
+                                                    (click)="seleccionarProducto(producto.nombre, producto.precio_minimo, producto.descripcion, producto.id)">Editar</button>
+                                            <button class="btn btn-md btn-danger mr-2 ml-2" style ="width:35%; margin-left: 10%; margin-right: 5%;"
+                                                    (click)="eliminarProducto(producto.id)">Eliminar</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -62,20 +68,9 @@
 </div>
 
 <app-modal-agregar-producto></app-modal-agregar-producto>
+<app-modal-editar-producto [nombreProducto]="nombreProducto" [precioMinimo]="precioMinimo" 
+[descripcionProducto]="descripcionProducto" [idProducto]="idProducto"></app-modal-editar-producto>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+```
+```
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<!-- <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script> -->
-
-<!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>

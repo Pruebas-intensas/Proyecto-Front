@@ -3,16 +3,31 @@ aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="exampleModalLabel">Asignar</h2>
+                <h2 class="modal-title" id="exampleModalLabel">Nuevo Producto</h2>
             </div>
             <div class="modal-body">
-                Ingrese una o varias carreras a agregar, para hacerlo utilice una linea por carrera.
+                Ingrese los datos del producto a agregar
+            </div>
+            <table class="table" style="width:80%; margin-left:10%; margin-right:10%">
+                <tr>
+                    <td style="vertical-align: middle;">Nombre</td>
+                    <td><input type="text" class="form-control" aria-label="Nombre del producto" id="nombreProducto"></td>                
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;">Precio Mínimo</td>
+                    <td><input type="text" class="form-control" aria-label="Precio minimo" id="precioMinimo"></td>                
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;">Descripción</td>
+                    <td><textarea type="text" class="form-control" style="resize: none;" aria-label="Descripcion" id="descripcionProducto" rows="4"></textarea></td>                
+                </tr>
+            </table>
+            <div id="errorDiv" class="alert alert-danger" role="alert" style="width:80%; margin-left:10%; margin-right:10%; display:none;">
+                <p id="errorText" style="text-align:center; margin-bottom:0px;"></p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <button>
-                    Crear
-                </button>   
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancelar</button>
+                <button class="btn btn-primary" type="button" (click)="crearProducto()"> Crear</button>   
             </div>
         </div>
     </div>
