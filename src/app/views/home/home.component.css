@@ -13,3 +13,11 @@
     vertical-align: middle;
     text-align: center;
 }
+
+.elemento {
+    position: absolute; /* Permite el posicionamiento absoluto dentro del contenedor */
+    bottom: 0; /* Coloca el elemento en la parte inferior del contenedor */
+    width: 80%;
+    text-align: center;
+    padding-bottom:10%
+  }
