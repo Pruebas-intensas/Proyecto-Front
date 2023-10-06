@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit{
                 console.log("err:", err)
             },
             complete: () => {
+                //meter weas de login y sesiones disen
                 console.log("response:", response)
                 if (response.status == 200) {
                     this.router.navigate(['/home']);
