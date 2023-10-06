@@ -2,16 +2,13 @@
     <hr>
     <h2 class="m-3">Productos disponibles</h2>
     <hr>
-    <div class="row" >
+    <div class="row justify-content-center" >
         <div class="col-xl-4" >
-            <input class="form-control-lg" type="text" class="form-control" placeholder="Buscar producto" [(ngModel)]="busqueda"> 
+            <input type="text" class="form-control" placeholder="Buscar producto" [(ngModel)]="busqueda" (ngModelChange)="buscar()">
         </div>
-        <div class="col-xl-4" >
-            <button class="btn btn-primary " (click)="buscar()">Buscar</button>
-        </div>
+    
     </div>
     <div class="row justify-content-center">
-
         <div class="col-xl-4" *ngFor="let prod of productos" >
             <div class="card o-hidden border-0 shadow-lg my-3" [routerLink]="['/detalle', prod.id]" style="height: 250px;">
                 <div class="card-body p-0" >
@@ -22,7 +19,11 @@
                                 <div class="text-gray-900 descripcionProducto">
                                     {{prod.descripcion}}
                                 </div>
-                                <div class="h5 text-gray-900 mt-2 mb-0">Precio inicial: ${{prod.precio_minimo}}</div>
+                                <div *ngIf="prod.ofertas.length > 0; else elseBlock" 
+                                    class="h5 text-gray-900 mt-2 mb-0 elemento">Precio actual: {{prod.ofertas[0].monto | currency:'CLP':'code':'1.0-2':'es'}}</div>
+                                <ng-template #elseBlock>
+                                    <div class="h5 text-gray-900 mt-2 mb-0 elemento">Precio actual: {{prod.precio_minimo | currency:'CLP':'code':'1.0-2':'es' }}</div>
+                                </ng-template>
                             </div>
                         </div>
                     </div>

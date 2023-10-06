@@ -9,7 +9,9 @@ import { ProductoService } from 'src/app/service/producto.service';
 export class HomeComponent {
 
     productos: any = [];
+    productos_respaldo: any = [];
     busqueda: string = '';
+    fechaActual: string = new Date().toISOString().slice(0, 10);
 
     constructor(private productoService: ProductoService) {
         let response: any;
@@ -22,14 +24,22 @@ export class HomeComponent {
               console.log(error);
             },
             complete: () => {
+              console.log(response);
+              response.body = response.body.filter((producto: any) => {
+                return producto.fecha_termino > this.fechaActual;
+              });
               this.productos = response.body;
-              console.log(this.productos);
+              this.productos_respaldo = response.body;
             }
         });
     }
 
   buscar(){
-    console.log("");
+    this.productos = this.productos_respaldo;
+    this.productos = this.productos.filter((producto: any) => {
+      return producto.nombre.toLowerCase().includes(this.busqueda.toLowerCase());
+    }
+    );
   }
 }
 

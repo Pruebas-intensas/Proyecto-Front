@@ -20,6 +20,7 @@ export class CrudProductosComponent implements AfterViewInit{
   fechaActual: string = new Date().toISOString().slice(0, 10);
 
   constructor(private productoService: ProductoService) { 
+    console.log(this.fechaActual);
     let response: any;
     this.productoService.get_all_productos().subscribe({
       next: (data: any) => {
