@@ -2,6 +2,14 @@
     <hr>
     <h2 class="m-3">Productos disponibles</h2>
     <hr>
+    <div class="row" >
+        <div class="col-xl-4" >
+            <input class="form-control-lg" type="text" class="form-control" placeholder="Buscar producto" [(ngModel)]="busqueda"> 
+        </div>
+        <div class="col-xl-4" >
+            <button class="btn btn-primary " (click)="buscar()">Buscar</button>
+        </div>
+    </div>
     <div class="row justify-content-center">
 
         <div class="col-xl-4" *ngFor="let prod of productos" >
