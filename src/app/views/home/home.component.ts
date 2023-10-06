@@ -9,6 +9,7 @@ import { ProductoService } from 'src/app/service/producto.service';
 export class HomeComponent {
 
     productos: any = [];
+    fechaActual: string = new Date().toISOString().slice(0, 10);
 
     constructor(private productoService: ProductoService) {
         let response: any;

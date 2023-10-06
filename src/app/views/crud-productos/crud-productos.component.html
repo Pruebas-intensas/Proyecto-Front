@@ -44,7 +44,7 @@
                                         <td style="vertical-align: middle;">{{producto?.nombre}}</td>
                                         <td style="vertical-align: middle; text-align: right;">${{producto?.precio_minimo}}</td>
                                         <td style="vertical-align: middle; text-align: right;">${{producto?.ofertas[0]?.monto}}</td>
-                                        <td style="vertical-align: middle; text-align: center;" *ngIf="producto?.fecha_termino > fechaActual; else subastaTerminada">
+                                        <td style="vertical-align: middle; text-align: center;" *ngIf="producto?.fecha_termino >= fechaActual; else subastaTerminada">
                                             {{producto?.fecha_termino | date:'dd/MM/yyyy'}}
                                         </td>
                                         <ng-template #subastaTerminada>
