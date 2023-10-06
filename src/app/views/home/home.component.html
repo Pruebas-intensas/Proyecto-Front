@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
 
         <div class="col-xl-4" *ngFor="let prod of productos" >
-            <div  *ngIf="prod?.fecha_termino >= fechaActual;" class="card o-hidden border-0 shadow-lg my-3" [routerLink]="['/detalle', prod.id]" style="height: 250px;">
+            <div class="card o-hidden border-0 shadow-lg my-3" [routerLink]="['/detalle', prod.id]" style="height: 250px;">
                 <div class="card-body p-0" >
                     <div class="row">
                         <div class="p-5">

@@ -22,8 +22,11 @@ export class HomeComponent {
               console.log(error);
             },
             complete: () => {
+              console.log(response);
+              response.body = response.body.filter((producto: any) => {
+                return producto.fecha_termino > this.fechaActual;
+              });
               this.productos = response.body;
-              console.log(this.productos);
             }
         });
     }
