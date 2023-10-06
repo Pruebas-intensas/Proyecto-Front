@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
-import { environment } from '../../../environments/environment';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -24,7 +23,7 @@ export class RegisterComponent implements OnInit{
       nombre: ['', [Validators.required, Validators.minLength(3)]],
       apellido: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       cnfPass: ['', Validators.required]
     });
   }
@@ -46,7 +45,7 @@ export class RegisterComponent implements OnInit{
         console.log("err:", err)
       },
       complete: () => {
-        console.log("respuesta:", respuesta)
+        //console.log("respuesta:", respuesta)
         this.router.navigate(['/']);
       }
     });
