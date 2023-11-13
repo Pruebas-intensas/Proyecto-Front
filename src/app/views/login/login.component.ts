@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit{
 
     ngOnInit() {
         this.loginForm = this.fb.group({
-        email: ['', Validators.required],
-        password: ['', Validators.required]
+            email: ['', Validators.required],
+            password: ['', Validators.required]
         });
     }
 
@@ -39,7 +39,9 @@ export class LoginComponent implements OnInit{
                 console.log("err:", err)
             },
             complete: () => {
-                console.log("response:", response)
+                window.localStorage.setItem('username', response.body.nombre)
+                window.localStorage.setItem('admin', response.body.admin)
+                console.log("response login:", response)
                 if (response.status == 200) {
                     this.router.navigate(['/home']);
                     userLogged = 'login_valid'
