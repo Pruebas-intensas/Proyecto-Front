@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit{
             complete: () => {
                 window.localStorage.setItem('username', response.body.nombre)
                 window.localStorage.setItem('admin', response.body.admin)
+                window.localStorage.setItem('id', response.body.id)
                 console.log("response login:", response)
                 if (response.status == 200) {
                     this.router.navigate(['/home']);
