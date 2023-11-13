@@ -14,6 +14,20 @@
     text-align: center;
 }
 
+.btn {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-control{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
 .elemento {
     position: absolute; /* Permite el posicionamiento absoluto dentro del contenedor */
     bottom: 0; /* Coloca el elemento en la parte inferior del contenedor */
@@ -21,3 +35,4 @@
     text-align: center;
     padding-bottom:10%
   }
+

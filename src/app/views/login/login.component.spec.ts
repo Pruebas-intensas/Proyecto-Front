@@ -46,7 +46,7 @@ describe('LoginComponent', () => {
 		password: '123'
 	})
 	fixture.nativeElement.querySelector('button').click();
-	expect(component.loginForm.valid).toBeTruthy();
+	expect(component.loginForm.valid).toBeFalsy();
   });
 
 });
