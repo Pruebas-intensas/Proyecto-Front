@@ -7,6 +7,7 @@ import { CrudProductosComponent } from './views/crud-productos/crud-productos.co
 import { RegisterComponent } from './views/register/register.component';
 import { HomeComponent } from './views/home/home.component';
 import { DetalleProductoComponent } from './views/detalle-producto/detalle-producto.component';
+import { DashboardOfertasComponent } from './views/dashboard-ofertas/dashboard-ofertas.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'home', component: HomeComponent},
     { path: 'detalle/:id', component: DetalleProductoComponent},
+    { path: 'dashboard', component: DashboardOfertasComponent},
     { path: '**', redirectTo: ''}
 ]
 
