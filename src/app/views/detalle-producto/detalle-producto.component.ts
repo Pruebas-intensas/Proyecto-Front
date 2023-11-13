@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class DetalleProductoComponent {
 
-    id_usuario: number = parseInt(window.localStorage.getItem('id') || '');
+    id_usuario: number = 1;
 
     ofertaForm: FormGroup;
     id: any;
