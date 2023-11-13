@@ -16,6 +16,13 @@ export class ProductoService {
     return this.http.request(req);
   }
 
+  get_productos_usuario(id: number) {
+    const req = new HttpRequest('GET', `${environment.url_back}/producto/all_usuario?id_usuario=${id}`, {
+      responseType: 'json'
+    });
+    return this.http.request(req);
+  }
+
   get_producto(id: number) {
     const req = new HttpRequest('GET', `${environment.url_back}/producto?id=${id}`, {
       responseType: 'json'

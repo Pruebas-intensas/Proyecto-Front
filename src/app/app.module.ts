@@ -15,6 +15,8 @@ import { HomeComponent } from './views/home/home.component';
 import { DetalleProductoComponent } from './views/detalle-producto/detalle-producto.component';
 
 import localeEsES from '@angular/common/locales/es';
+import { DashboardOfertasComponent } from './views/dashboard-ofertas/dashboard-ofertas.component';
+import { BarraNavegacionComponent } from './components/barra-navegacion/barra-navegacion.component';
 
 registerLocaleData(localeEsES);
 
@@ -28,7 +30,9 @@ registerLocaleData(localeEsES);
     ModalAgregarProductoComponent,
     ModalEditarProductoComponent,
     HomeComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    DashboardOfertasComponent,
+    BarraNavegacionComponent
   ],
   imports: [
     BrowserModule,
