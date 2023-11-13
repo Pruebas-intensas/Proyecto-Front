@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ProductoService } from '../../service/producto.service';
-import { environment } from 'src/environments/environment';
 
 import * as $ from 'jquery';
 
@@ -20,12 +19,8 @@ export class CrudProductosComponent implements AfterViewInit{
 
   fechaActual: string = new Date().toISOString().slice(0, 10);
 
-  constructor(private productoService: ProductoService) {
-	//console.log("local storage: ", window.localStorage.getItem('username'));
-    if (window.localStorage.getItem('admin') != "true") {
-    	window.location.href = environment.url_front;
-    }
-    //console.log(this.fechaActual);
+  constructor(private productoService: ProductoService) { 
+    console.log(this.fechaActual);
     let response: any;
     this.productoService.get_all_productos().subscribe({
       next: (data: any) => {
@@ -36,7 +31,7 @@ export class CrudProductosComponent implements AfterViewInit{
       },
       complete: () => {
         this.productos = response.body;
-        console.log("Productos", this.productos);
+        console.log(this.productos);
       }
     });
   }

@@ -68,7 +68,7 @@
             }
           },
           "options": {
-            "port": 4200,
+            "port": 80,
             "allowedHosts": ["all"]
           },
           "defaultConfiguration": "development"
