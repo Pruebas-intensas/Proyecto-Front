@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -12,6 +13,11 @@ import { ModalAgregarProductoComponent } from './components/modal-agregar-produc
 import { ModalEditarProductoComponent } from './components/modal-editar-producto/modal-editar-producto.component';
 import { HomeComponent } from './views/home/home.component';
 import { DetalleProductoComponent } from './views/detalle-producto/detalle-producto.component';
+
+import localeEsES from '@angular/common/locales/es';
+
+registerLocaleData(localeEsES);
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,7 @@ import { DetalleProductoComponent } from './views/detalle-producto/detalle-produ
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

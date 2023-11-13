@@ -14,7 +14,11 @@
                                 <div class="text-gray-900 descripcionProducto">
                                     {{prod.descripcion}}
                                 </div>
-                                <div class="h5 text-gray-900 mt-2 mb-0">Precio inicial: ${{prod.precio_minimo}}</div>
+                                <div *ngIf="prod.ofertas.length > 0; else elseBlock" 
+                                    class="h5 text-gray-900 mt-2 mb-0 elemento">Precio actual: {{prod.ofertas[0].monto | currency:'CLP':'code':'1.0-2':'es'}}</div>
+                                <ng-template #elseBlock>
+                                    <div class="h5 text-gray-900 mt-2 mb-0 elemento">Precio actual: {{prod.precio_minimo | currency:'CLP':'code':'1.0-2':'es' }}</div>
+                                </ng-template>
                             </div>
                         </div>
                     </div>
