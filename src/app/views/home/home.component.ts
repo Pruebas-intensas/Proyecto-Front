@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductoService } from 'src/app/service/producto.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,10 @@ export class HomeComponent {
     fechaActual: string = new Date().toISOString().slice(0, 10);
 
     constructor(private productoService: ProductoService) {
+      	if (!window.localStorage.getItem('username')) {
+    		window.location.href = environment.url_front;
+      	}
+
         let response: any;
 
         this.productoService.get_all_productos().subscribe({
