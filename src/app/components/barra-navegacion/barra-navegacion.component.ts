@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class BarraNavegacionComponent {
 
   nombre_usuario: string = window.localStorage.getItem('username') || '';
+  admin: boolean = window.localStorage.getItem('admin') === 'true' || false;
 
   constructor() {
   

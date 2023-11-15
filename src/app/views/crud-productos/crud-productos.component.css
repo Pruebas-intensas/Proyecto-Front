@@ -19,3 +19,11 @@
   .descripcionProducto.expandida + .ver-mas {
     display: none; /* Oculta el botón "Ver más" cuando la descripción está expandida */
   }
+
+  .table-hover tr:hover{
+    cursor: pointer;
+  }
+
+  .table-hover th{
+    background-color: #eff9ff;
+}
