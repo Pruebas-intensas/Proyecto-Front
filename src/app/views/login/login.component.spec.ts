@@ -17,6 +17,10 @@ describe('LoginComponent', () => {
   });
 
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [LoginComponent],
+      imports: [HttpClientTestingModule, ReactiveFormsModule]
+    });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -40,13 +44,14 @@ describe('LoginComponent', () => {
 	expect(component.loginForm.valid).toBeTruthy();
   });
 
-  //it('should validate correct user and password', () => {
-	//component.loginForm = formBuilder.group({
-	//	email: 'no@existo.com',
-	//	password: '123'
-	//})
-	//fixture.nativeElement.querySelector('button').click();
-	//expect(component.loginForm.valid).toBeFalsy();
-  //});
+  it('should validate password is not empty', () => {
+	component.loginForm = formBuilder.group({
+		email: 'no@existo.com',
+		password: '123'
+	})
+	fixture.nativeElement.querySelector('button').click();
+  console.log(component.loginForm);
+	expect(component.loginForm.valid).toBeFalsy();
+  });
 
 });
