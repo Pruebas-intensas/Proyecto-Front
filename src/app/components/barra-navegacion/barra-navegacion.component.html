@@ -2,9 +2,9 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-0 static-top shadow">
     <div class="h2 ml-3 font-weight-bold text-gray-800">Rincón del Olvido</div>
     <div class="topbar-divider d-none d-sm-block"></div>
-    <div class="h5 ml-4 mb-0" ><a [routerLink]="['/home']">Buscar Productos</a></div>
-    <div class="h5 ml-4 mb-0" ><a [routerLink]="['/dashboard']">Mis Ofertas</a></div>
-    <div class="h5 ml-4 mb-0" *ngIf="admin" ><a [routerLink]="['/productos']">Administrar Productos</a></div>
+    <div class="h5 ml-4 mb-0" ><a routerLink="/home">Buscar Productos</a></div>
+    <div class="h5 ml-4 mb-0" ><a routerLink="/dashboard">Mis Ofertas</a></div>
+    <div class="h5 ml-4 mb-0" *ngIf="admin" ><a routerLink="/productos">Administrar Productos</a></div>
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
         
