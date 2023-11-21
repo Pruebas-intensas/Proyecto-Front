@@ -38,9 +38,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var selenium_webdriver_1 = require("selenium-webdriver");
 var chrome_1 = require("selenium-webdriver/chrome");
-function example() {
+function loginTest() {
     return __awaiter(this, void 0, void 0, function () {
-        var chromeOptions, driver, boton, error_1;
+        var chromeOptions, driver, boton, currentUrl, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -53,7 +53,8 @@ function example() {
                     driver = _a.sent();
                     _a.label = 2;
                 case 2:
-                    _a.trys.push([2, 9, , 10]);
+                    _a.trys.push([2, 11, , 12]);
+                    console.log("\nIntentando ingresar a la página...");
                     return [4 /*yield*/, driver.get('https://pruebas-intensas.github.io/')];
                 case 3:
                     _a.sent();
@@ -61,9 +62,9 @@ function example() {
                 case 4:
                     _a.sent();
                     // escribir en nombre de usuario y contraseña en las casillas de id exampleInputEmail y exampleInputPassword
-                    return [4 /*yield*/, driver.findElement(selenium_webdriver_1.By.id('exampleInputEmail')).sendKeys('user1@gmail.com')];
+                    console.log("Intentando ingresar usuario y contraseña...");
+                    return [4 /*yield*/, driver.findElement(selenium_webdriver_1.By.id('exampleInputEmail')).sendKeys('user@gmail.com')];
                 case 5:
-                    // escribir en nombre de usuario y contraseña en las casillas de id exampleInputEmail y exampleInputPassword
                     _a.sent();
                     return [4 /*yield*/, driver.findElement(selenium_webdriver_1.By.id('exampleInputPassword')).sendKeys('123')];
                 case 6:
@@ -74,15 +75,27 @@ function example() {
                     return [4 /*yield*/, boton.click()];
                 case 8:
                     _a.sent();
-                    return [3 /*break*/, 10];
+                    // check if the element with id "userDropdown" is present
+                    console.log("Esperando inicio de sesión..");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 5000)];
                 case 9:
+                    _a.sent();
+                    return [4 /*yield*/, driver.getCurrentUrl()];
+                case 10:
+                    currentUrl = _a.sent();
+                    return [2 /*return*/, currentUrl === 'https://pruebas-intensas.github.io/home'];
+                case 11:
                     error_1 = _a.sent();
-                    console.error('Error:', error_1);
-                    return [3 /*break*/, 10];
-                case 10: return [2 /*return*/];
+                    //console.error('Error:', error);
+                    return [2 /*return*/, false];
+                case 12: return [2 /*return*/];
             }
         });
     });
 }
+console.log("Results\n");
 // Llamar a la función de ejemplo
-example();
+console.log("Iniciando Login Test");
+loginTest().then(function (result) {
+    console.log("Resultado Login Test:", result);
+});

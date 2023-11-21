@@ -16,7 +16,7 @@ export class HomeComponent {
 
     constructor(private productoService: ProductoService) {
       	if (!window.localStorage.getItem('username')) {
-    		window.location.href = environment.url_front;
+    		  window.location.href = environment.url_front;
       	}
 
         let response: any;
