@@ -22,10 +22,11 @@ async function loginTest() {
         console.log("Esperando inicio de sesión..");
         await driver.wait(until.elementLocated(By.id('userDropdown')), 5000);
         const currentUrl = await driver.getCurrentUrl();
-        
-        return currentUrl === 'https://pruebas-intensas.github.io/home';
+        driver.quit();
+        return currentUrl === 'https://pruebas-intensas.github.io/home';        
     } catch (error) {
         //console.error('Error:', error);
+        driver.quit();
         return false;
     }  
 }
