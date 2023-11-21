@@ -36,10 +36,13 @@ describe('RegisterComponent', () => {
   });
 
   it('should validate correct user and password', () => {
-	component.registroForm = formBuilder.group({
-		email: 'rtallax@gmail.com',
-		password: '123'
-	})
+    component.registroForm.setValue({
+      nombre: 'Pedro',
+      apellido: 'Perez',
+      email: 'pedro@gmail.com', 
+      password: '123123',
+      cnfPass: '123123'
+  });
 	fixture.nativeElement.querySelector('button').click();
 	expect(component.registroForm.valid).toBeTruthy();
   });

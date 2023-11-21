@@ -69,7 +69,7 @@ export default function(config) {
 
     // start these browsers
     // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
-    browsers: ['Firefox', 'Edge'],
+    browsers: ['Firefox', 'Edge', 'Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
@@ -77,5 +77,7 @@ export default function(config) {
     // Concurrency level
     // how many browser instances should be started simultaneously
     concurrency: Infinity
+
+
   })
 }
