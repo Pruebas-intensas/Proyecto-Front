@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Thu Oct 05 2023 15:34:25 GMT-0300 (hora de verano de Chile)
 
-module.exports = function(config) {
+export default function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -69,7 +69,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
-    browsers: ['Firefox', 'Edge'],
+    browsers: ['Firefox', 'Edge', 'Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
@@ -77,5 +77,7 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser instances should be started simultaneously
     concurrency: Infinity
+
+
   })
 }
