@@ -284,10 +284,11 @@ async function executeTests() {
     let testCounter = testFunctions.length;
 
     const chromeOptions = new Options();
+    //chromeOptions.addArguments("--headless=new");
     const driver: WebDriver = await new Builder()
         .forBrowser('chrome')
         .setChromeOptions(chromeOptions)
-        .build();
+        .build();        
 
     for (const test of testFunctions) {
         const result = await test(driver);
