@@ -35,6 +35,9 @@
                                             <p *ngIf="loginForm.controls['password'].errors?.['required']">
                                                 Se requiere contraseña
                                             </p>
+                                            <p *ngIf="loginForm.controls['password'].errors?.['minlength']">
+                                                Las contraseñas debe son de al menos 6 caracteres
+                                            </p>
                                         </div>
                                     </div>
                                     <button id="myBtn" class="btn-primary btn-user btn-block">
@@ -55,7 +58,7 @@
                                     <a class="small" routerLink="/resetPass">¿Has olvidado tu contraseña?</a>
                                 </div> -->
                                 <div class="text-center">
-                                    <a class="small" routerLink="/register">Crear cuenta</a>
+                                    <a id="registro" class="small" routerLink="/register">Crear cuenta</a>
                                 </div>
                             </div>
                         </div>

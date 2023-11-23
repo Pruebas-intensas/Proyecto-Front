@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { DetalleProductoComponent } from './detalle-producto.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BarraNavegacionComponent } from 'src/app/components/barra-navegacion/barra-navegacion.component';
 import { of } from 'rxjs';
 
 describe('DetalleProductoComponent', () => {
@@ -10,7 +11,7 @@ describe('DetalleProductoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DetalleProductoComponent],
+      declarations: [DetalleProductoComponent, BarraNavegacionComponent],
       imports: [HttpClientTestingModule, RouterModule.forRoot([])],
       providers: [{ActivatedRoute, useValue: { params: of({ id: 1 }) }}]
     });
