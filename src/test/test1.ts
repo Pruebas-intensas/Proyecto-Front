@@ -7,6 +7,8 @@ async function loginTest(driver: WebDriver) {
         console.log("\nIntentando ingresar a la página...", environment.url_front);
         await driver.get(environment.url_front);
         await driver.sleep(1000);
+        await driver.manage().window().maximize();
+
         console.log("Intentando ingresar usuario y contraseña...");
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123');
@@ -28,6 +30,8 @@ async function registerTest(driver: WebDriver) {
     try {
         console.log("Intentando ingresar a la página...", environment.url_front);
         await driver.get(environment.url_front);
+        await driver.manage().window().maximize();
+
         // click the a element with id "registro"
         console.log("Intentando ingresar a la página de registro...");
         const registro = await driver.wait(until.elementLocated(By.id('registro')), 500);
@@ -70,6 +74,8 @@ async function crearProductoTest(driver: WebDriver) {
         console.log("Intentando ingresar a la página...", environment.url_front);
         await driver.get(environment.url_front);
         await driver.sleep(1000);
+        await driver.manage().window().maximize();
+
         console.log("Intentando ingresar usuario y contraseña...");
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123');
@@ -143,6 +149,8 @@ async function eliminarProductoTest(driver: WebDriver) {
     try{
         console.log("Intentando ingresar a la página...", environment.url_front);
         await driver.get(environment.url_front);
+        // maximize the window
+        await driver.manage().window().maximize();
         await driver.sleep(1000);
         console.log("Intentando ingresar usuario y contraseña...");
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
@@ -211,6 +219,8 @@ async function realizarPujaTest(driver: WebDriver) {
     try{
         console.log("Intentando ingresar a la página...", environment.url_front);
         await driver.get(environment.url_front);
+        await driver.manage().window().maximize();
+
         console.log("Intentando ingresar usuario y contraseña...");
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123');
@@ -245,12 +255,16 @@ async function realizarPujaTest(driver: WebDriver) {
             await driver.findElement(By.id('montoPuja')).sendKeys(precioActualString);
             //click the button with id btnAceptarPuja
             console.log("Aceptando puja...");
-            const aceptar = await driver.wait(until.elementLocated(By.id('btnAceptarPuja')), 500);
-            await aceptar.click();
+            const aceptar = await driver.wait(until.elementLocated(By.id('btnAceptarPuja')), 1000);
+            // scroll if necessary so that the button is visible
+            await driver.executeScript("arguments[0].scrollIntoView(true);", aceptar);
+            const aceptar2 = await driver.wait(until.elementLocated(By.id('btnAceptarPuja')), 1000);
+            await aceptar2.click();
             //wait and check if the new precioActual is equal to precioActualString}
             await driver.sleep(1000);
             console.log("Chequeando puja realizada...");
             const precioActual2 = await driver.findElement(By.id('precioActual')).getText();
+            
             return precioActual2.split('$')[1] === precioActualString;
         }
         else{
@@ -265,9 +279,9 @@ async function realizarPujaTest(driver: WebDriver) {
 }
 
 async function executeTests() {
-    let successCounter = 0;
-    let testCounter = 0;
+    let successCounter = 0;    
     let testFunctions = [loginTest, registerTest, crearProductoTest, eliminarProductoTest, realizarPujaTest];
+    let testCounter = testFunctions.length;
 
     const chromeOptions = new Options();
     const driver: WebDriver = await new Builder()
@@ -276,7 +290,6 @@ async function executeTests() {
         .build();
 
     for (const test of testFunctions) {
-        testCounter++;
         const result = await test(driver);
         if (result) {
             successCounter++;
@@ -288,7 +301,13 @@ async function executeTests() {
         }
     }
     driver.quit();
-    console.log('\x1b[32m%s\x1b[0m', successCounter + '/' + testCounter + ' tests exitosos');
+    // print the number of successful tests in color green only if the amount of successful tests is less than the total amount of tests
+    if (successCounter == testCounter){
+        console.log('\x1b[32m%s\x1b[0m', successCounter + '/' + testCounter + ' tests exitosos');
+    }
+    else{
+        console.log('\x1b[31m%s\x1b[0m', successCounter + '/' + testCounter + ' tests exitosos');
+    }
 }
 
 executeTests();
