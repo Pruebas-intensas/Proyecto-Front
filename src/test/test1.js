@@ -516,7 +516,7 @@ function realizarPujaTest(driver) {
                     //wait and check if the new precioActual is equal to precioActualString}
                     _a.sent();
                     console.log("Chequeando puja realizada...");
-                    return [4 /*yield*/, driver.findElement(selenium_webdriver_1.By.id('precioActuadfl')).getText()];
+                    return [4 /*yield*/, driver.findElement(selenium_webdriver_1.By.id('precioActual')).getText()];
                 case 22:
                     precioActual2 = _a.sent();
                     return [2 /*return*/, precioActual2.split('$')[1] === precioActualString];
