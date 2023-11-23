@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="h5 text-gray-900 mb-2">Precio actual</div>
-                                    <div class="text-gray-900 mb-2">${{oferta_max}}</div>
+                                    <div class="text-gray-900 mb-2" id="precioActual">${{oferta_max}}</div>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                             </div>
                             <form class="user" [formGroup]="ofertaForm" (ngSubmit)="hacer_oferta()">
                                 <div class="form-group">
-                                    <input type="number" class="form-control form-control-user" formControlName="monto" name="monto" step="500"
+                                    <input type="number" class="form-control form-control-user" formControlName="monto" name="monto" step="500" id="montoPuja"
                                     style="width:40%;margin-left: 30%;margin-right: 30%;">
                                     <div *ngIf="ofertaForm.controls['monto'].invalid && (ofertaForm.controls['monto'].dirty || ofertaForm.controls['monto'].touched)" 
                                         class="alert alert-danger">
@@ -48,7 +48,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <button class="btn btn-success btn-block" type="submit" style="width:40%;margin-left: 30%;margin-right: 30%;">
+                                <button class="btn btn-success btn-block" type="submit" style="width:40%;margin-left: 30%;margin-right: 30%;" id="btnAceptarPuja">
                                     Aceptar
                                 </button>
                             </form>

@@ -18,7 +18,7 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4" style ="width:90%; margin-left:5%; margin-right:5%;">
                     <div class="card-body">
-                        <button id="myBtn" class="btn btn-lg btn-primary mb-3 mt-1" style ="margin-left:5%;" data-bs-target="#modal-agregar-producto" data-bs-toggle="modal">
+                        <button id="btnAgregar" class="btn btn-lg btn-primary mb-3 mt-1" style ="margin-left:5%;" data-bs-target="#modal-agregar-producto" data-bs-toggle="modal">
                             Agregar Producto
                         </button>
                         
@@ -55,12 +55,12 @@
                                         <td class="descripcionProducto">{{producto?.descripcion}}</td>
                                         <td>
                                             <button class="btn btn-md btn-success" style ="width:35%; margin-left: 10%; margin-right: 5%;" 
-                                                    data-bs-target="#modal-editar-producto" data-bs-toggle="modal" 
+                                                    data-bs-target="#modal-editar-producto" data-bs-toggle="modal" id="btnEditar"
                                                     (click)="seleccionarProducto(producto?.nombre, producto?.precio_minimo, producto?.descripcion, producto?.id, producto?.fechaTermino)">
                                                     <span class="icon">✏️</span> <!-- Icono visible en pantallas anchas -->
                                                     <span class="text">Editar</span> <!-- Texto visible en pantallas anchas -->
                                             </button>
-                                            <button class="btn btn-md btn-secondary mr-2 ml-2" style ="width:35%; margin-left: 10%; margin-right: 5%;"
+                                            <button class="btn btn-md btn-secondary mr-2 ml-2" style ="width:35%; margin-left: 10%; margin-right: 5%;" id="{{'btnEliminar'+producto.nombre}}"
                                                     (click)="eliminarProducto(producto.id)">
                                                     <span class="text">Eliminar</span> <!-- Texto visible en pantallas anchas -->
                                                     <span class="icon">🗑️</span> <!-- Icono visible en pantallas angostas -->    
