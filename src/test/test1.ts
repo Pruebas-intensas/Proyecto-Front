@@ -285,7 +285,7 @@ async function executeTests() {
 
     const chromeOptions = new Options();
     const driver: WebDriver = await new Builder()
-        .forBrowser('chrome')
+        .forBrowser('chrome -headless')
         .setChromeOptions(chromeOptions)
         .build();
 
