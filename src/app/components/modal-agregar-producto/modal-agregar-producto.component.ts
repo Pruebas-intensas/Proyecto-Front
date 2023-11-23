@@ -26,9 +26,8 @@ export class ModalAgregarProductoComponent {
       //call the service method crear_producto
       this.productoService.crear_producto(nombre, parseInt(precio_minimo), descripcion, fecha_termino).subscribe((data: any) => {
         if (data.error) {
-          alert(data.error);
+          console.log(data.error);
         } else {
-          alert('Producto creado');
           //close the modal
           let modal = document.getElementById('closeModal');
           if (modal) {

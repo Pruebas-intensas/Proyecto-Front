@@ -71,7 +71,7 @@ export class CrudProductosComponent implements AfterViewInit{
   eliminarProducto(id: number){
     // show confirm, if yes, then delete
     let response: any;
-    window.confirm('¿Está seguro de eliminar este producto?') ? this.productoService.eliminar_producto(id).subscribe({
+    this.productoService.eliminar_producto(id).subscribe({
       next: (data: any) => {
         response = { ...response, ...data};
       },
@@ -82,13 +82,11 @@ export class CrudProductosComponent implements AfterViewInit{
         //console.log(response);
         // show alert
         if(response.body.status != 'error'){
-          alert('Producto eliminado con éxito');
-          // reload page
           window.location.reload();
         }
 
       }
-    }) : null;
+    })
   }
 
 }
