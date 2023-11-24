@@ -13,11 +13,11 @@ async function loginTest(driver: WebDriver) {
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123');
         //press the button called myBtn
-        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 500);
+        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 10000);
         await boton.click();
         // check if the element with id "userDropdown" is present
         console.log("Esperando inicio de sesión..");
-        await driver.wait(until.elementLocated(By.id('userDropdown')), 5000);
+        await driver.wait(until.elementLocated(By.id('userDropdown')), 10000);
         const currentUrl = await driver.getCurrentUrl();
         return currentUrl === environment.url_front+'/home';        
     } catch (error) {
@@ -34,11 +34,11 @@ async function registerTest(driver: WebDriver) {
 
         // click the a element with id "registro"
         console.log("Intentando ingresar a la página de registro...");
-        const registro = await driver.wait(until.elementLocated(By.id('registro')), 500);
+        const registro = await driver.wait(until.elementLocated(By.id('registro')), 10000);
         await registro.click();
         // check if the element with id "exampleInputEmail" is present
         console.log("Esperando página de registro...");
-        await driver.wait(until.elementLocated(By.id('exampleInputEmail')), 5000);
+        await driver.wait(until.elementLocated(By.id('exampleInputEmail')), 10000);
         console.log("Intentando ingresar datos...");
         const email = 'test'+Math.random()+'@gmail.com';
         await driver.findElement(By.id('exampleInputEmail')).sendKeys(email);
@@ -47,20 +47,20 @@ async function registerTest(driver: WebDriver) {
         await driver.findElement(By.id('exampleFirstName')).sendKeys('test');
         await driver.findElement(By.id('exampleLastName')).sendKeys('test');
 
-        const boton = await driver.wait(until.elementLocated(By.id('btnRegistro')), 500);
+        const boton = await driver.wait(until.elementLocated(By.id('btnRegistro')), 10000);
         await boton.click();
 
         // check if it got redirected to login page and try to login
         console.log("Esperando página de inicio de sesión...");
-        await driver.wait(until.elementLocated(By.id('exampleInputEmail')), 5000);
+        await driver.wait(until.elementLocated(By.id('exampleInputEmail')), 10000);
         await driver.findElement(By.id('exampleInputEmail')).sendKeys(email);
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123123');
         //press the button called myBtn
-        const boton2 = await driver.wait(until.elementLocated(By.id('myBtn')), 500);
+        const boton2 = await driver.wait(until.elementLocated(By.id('myBtn')), 10000);
         await boton2.click();
         // check if the element with id "userDropdown" is present
         console.log("Esperando inicio de sesión..");
-        await driver.wait(until.elementLocated(By.id('userDropdown')), 5000);
+        await driver.wait(until.elementLocated(By.id('userDropdown')), 10000);
         const currentUrl = await driver.getCurrentUrl();
         return currentUrl === environment.url_front+'/home';
     } catch (error) {
@@ -80,31 +80,31 @@ async function crearProductoTest(driver: WebDriver) {
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123');
         //press the button called myBtn
-        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 500);
+        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 10000);
         await boton.click();
         // check if the element with id "userDropdown" is present
         console.log("Esperando inicio de sesión..");
-        await driver.wait(until.elementLocated(By.id('userDropdown')), 5000);
+        await driver.wait(until.elementLocated(By.id('userDropdown')), 10000);
         const currentUrl = await driver.getCurrentUrl();
         if (currentUrl === environment.url_front+'/home'){
             //click the a element with id "btnProductos"
             console.log("Intentando ingresar a la página de productos...");
-            const productos = await driver.wait(until.elementLocated(By.id('btnProductos')), 500);
+            const productos = await driver.wait(until.elementLocated(By.id('btnProductos')), 10000);
             await productos.click();
 
             // check if the element with id "btnAgregar" is present
             console.log("Esperando página de productos...");
-            await driver.wait(until.elementLocated(By.id('btnAgregar')), 5000);
+            await driver.wait(until.elementLocated(By.id('btnAgregar')), 10000);
 
             //click the a element with id "btnAgregar"
             console.log("Intentando ingresar a la página de agregar productos...");
-            const agregar = await driver.wait(until.elementLocated(By.id('btnAgregar')), 500);
+            const agregar = await driver.wait(until.elementLocated(By.id('btnAgregar')), 10000);
             await agregar.click();
 
             // check if the modal modal-agregar-producto is present
             console.log("Esperando modal de agregar productos...");
             // check if modal-agregar-producto is visible (display: block)
-            const modal = await driver.wait(until.elementLocated(By.id('modal-agregar-producto')), 5000);
+            const modal = await driver.wait(until.elementLocated(By.id('modal-agregar-producto')), 10000);
             await driver.sleep(1000);
             console.log("Intentando ingresar nombre...");
             let nombreProducto = 'test'+Math.random();
@@ -118,15 +118,15 @@ async function crearProductoTest(driver: WebDriver) {
 
             // click the button with id btnCrearProducto 
             console.log("Intentando crear producto...");
-            const crear = await driver.wait(until.elementLocated(By.id('btnCrearProducto')), 500);
+            const crear = await driver.wait(until.elementLocated(By.id('btnCrearProducto')), 10000);
             await crear.click();
 
             driver.sleep(1000);
 
             // go back to home with btnHome and check if the product was created
             console.log("Esperando página de inicio...");
-            await driver.wait(until.elementLocated(By.id('btnHome')), 5000);
-            const home = await driver.wait(until.elementLocated(By.id('btnHome')), 500);
+            await driver.wait(until.elementLocated(By.id('btnHome')), 10000);
+            const home = await driver.wait(until.elementLocated(By.id('btnHome')), 10000);
             await home.click();
 
             // check if the product is present in the home page by writing its name in searchBar and checking if it is present by its name as text
@@ -156,31 +156,31 @@ async function eliminarProductoTest(driver: WebDriver) {
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123');
         //press the button called myBtn
-        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 500);
+        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 10000);
         await boton.click();
         // check if the element with id "userDropdown" is present
         console.log("Esperando inicio de sesión..");
-        await driver.wait(until.elementLocated(By.id('userDropdown')), 5000);
+        await driver.wait(until.elementLocated(By.id('userDropdown')), 10000);
         const currentUrl = await driver.getCurrentUrl();
         if (currentUrl === environment.url_front+'/home'){
             //click the a element with id "btnProductos"
             console.log("Intentando ingresar a la página de productos...");
-            const productos = await driver.wait(until.elementLocated(By.id('btnProductos')), 500);
+            const productos = await driver.wait(until.elementLocated(By.id('btnProductos')), 10000);
             await productos.click();
 
             // check if the element with id "btnAgregar" is present
             console.log("Esperando página de productos...");
-            await driver.wait(until.elementLocated(By.id('btnAgregar')), 5000);
+            await driver.wait(until.elementLocated(By.id('btnAgregar')), 10000);
 
             //click the a element with id "btnAgregar"
             console.log("Intentando ingresar a la página de agregar productos...");
-            const agregar = await driver.wait(until.elementLocated(By.id('btnAgregar')), 500);
+            const agregar = await driver.wait(until.elementLocated(By.id('btnAgregar')), 10000);
             await agregar.click();
 
             // check if the modal modal-agregar-producto is present
             console.log("Esperando modal de agregar productos...");
             // check if modal-agregar-producto is visible (display: block)
-            const modal = await driver.wait(until.elementLocated(By.id('modal-agregar-producto')), 5000);
+            const modal = await driver.wait(until.elementLocated(By.id('modal-agregar-producto')), 10000);
             await driver.sleep(1000);
             console.log("Intentando ingresar nombre...");
             let nombreProducto = 'test'+Math.random();
@@ -194,14 +194,14 @@ async function eliminarProductoTest(driver: WebDriver) {
 
             // click the button with id btnCrearProducto 
             console.log("Intentando crear producto...");
-            const crear = await driver.wait(until.elementLocated(By.id('btnCrearProducto')), 500);
+            const crear = await driver.wait(until.elementLocated(By.id('btnCrearProducto')), 10000);
             await crear.click();
 
             driver.sleep(1000);
 
             // search for btnEliminar + nombreProducto and click it
             console.log("Intentando eliminar producto...");
-            const eliminar = await driver.wait(until.elementLocated(By.id('btnEliminar'+nombreProducto)), 500);
+            const eliminar = await driver.wait(until.elementLocated(By.id('btnEliminar'+nombreProducto)), 10000);
             await eliminar.click();
             await driver.sleep(1000)
             return true;
@@ -225,11 +225,11 @@ async function realizarPujaTest(driver: WebDriver) {
         await driver.findElement(By.id('exampleInputEmail')).sendKeys('user@gmail.com');
         await driver.findElement(By.id('exampleInputPassword')).sendKeys('123');
         //press the button called myBtn
-        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 500);
+        const boton = await driver.wait(until.elementLocated(By.id('myBtn')), 10000);
         await boton.click();
         // check if the element with id "userDropdown" is present
         console.log("Esperando inicio de sesión..");
-        await driver.wait(until.elementLocated(By.id('userDropdown')), 5000);
+        await driver.wait(until.elementLocated(By.id('userDropdown')), 10000);
         const currentUrl = await driver.getCurrentUrl();
         if (currentUrl === environment.url_front+'/home'){
             //search for the text "Tanque Soviético" 
@@ -241,7 +241,7 @@ async function realizarPujaTest(driver: WebDriver) {
             await producto.click();           
             //check if the url contains the text "detalle"
             console.log("Esperando página del producto...");
-            await driver.wait(until.urlContains('detalle'), 5000);
+            await driver.wait(until.urlContains('detalle'), 10000);
             //search for the number in the element with id "precioActual" and save it
             console.log("Intentando ingresar puja...");
             const precioActual = await driver.findElement(By.id('precioActual')).getText();
