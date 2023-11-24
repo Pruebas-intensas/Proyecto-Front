@@ -255,11 +255,9 @@ async function realizarPujaTest(driver: WebDriver) {
             await driver.findElement(By.id('montoPuja')).sendKeys(precioActualString);
             //click the button with id btnAceptarPuja
             console.log("Aceptando puja...");
-            const aceptar = await driver.wait(until.elementLocated(By.id('btnAceptarPuja')), 1000);
+            const aceptar = await driver.wait(until.elementLocated(By.id('btnAceptarPuja')), 3000);
             // scroll if necessary so that the button is visible
-            await driver.executeScript("arguments[0].scrollIntoView(true);", aceptar);
-            const aceptar2 = await driver.wait(until.elementLocated(By.id('btnAceptarPuja')), 1000);
-            await aceptar2.click();
+            await aceptar.click();
             //wait and check if the new precioActual is equal to precioActualString}
             await driver.sleep(1000);
             console.log("Chequeando puja realizada...");
@@ -285,6 +283,8 @@ async function executeTests() {
 
     const chromeOptions = new Options();
     chromeOptions.addArguments("--headless=new");
+    chromeOptions.addArguments("--window-size=1920,1080");
+
     const driver: WebDriver = await new Builder()
         .forBrowser('chrome')
         .setChromeOptions(chromeOptions)
