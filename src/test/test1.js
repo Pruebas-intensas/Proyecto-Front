@@ -511,7 +511,11 @@ function realizarPujaTest(driver) {
                     _a.sent();
                     console.log("Chequeando puja realizada...");
                     return [4 /*yield*/, driver.findElement(selenium_webdriver_1.By.id('precioActual')).getText()];
+<<<<<<< HEAD
                 case 20:
+=======
+                case 22:
+>>>>>>> main
                     precioActual2 = _a.sent();
                     return [2 /*return*/, precioActual2.split('$')[1] === precioActualString];
                 case 21: return [2 /*return*/, false];
