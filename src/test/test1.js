@@ -421,11 +421,11 @@ function eliminarProductoTest(driver) {
 }
 function realizarPujaTest(driver) {
     return __awaiter(this, void 0, void 0, function () {
-        var boton, currentUrl, producto, precioActual, precioActualNumber, precioActualString, aceptar, aceptar2, precioActual2, error_5;
+        var boton, currentUrl, producto, precioActual, precioActualNumber, precioActualString, aceptar, precioActual2, error_5;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 25, , 26]);
+                    _a.trys.push([0, 23, , 24]);
                     console.log("Intentando ingresar a la página...", environment_1.environment.url_front);
                     return [4 /*yield*/, driver.get(environment_1.environment.url_front)];
                 case 1:
@@ -454,7 +454,7 @@ function realizarPujaTest(driver) {
                     return [4 /*yield*/, driver.getCurrentUrl()];
                 case 8:
                     currentUrl = _a.sent();
-                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 23];
+                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 21];
                     //search for the text "Tanque Soviético" 
                     console.log("Intentando ingresar a la página del producto...");
                     // click in the position of the text "Tanque Soviético"
@@ -496,37 +496,35 @@ function realizarPujaTest(driver) {
                     _a.sent();
                     //click the button with id btnAceptarPuja
                     console.log("Aceptando puja...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAceptarPuja')), 1000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAceptarPuja')), 3000)];
                 case 17:
                     aceptar = _a.sent();
                     // scroll if necessary so that the button is visible
-                    return [4 /*yield*/, driver.executeScript("arguments[0].scrollIntoView(true);", aceptar)];
+                    return [4 /*yield*/, aceptar.click()];
                 case 18:
                     // scroll if necessary so that the button is visible
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAceptarPuja')), 1000)];
-                case 19:
-                    aceptar2 = _a.sent();
-                    return [4 /*yield*/, aceptar2.click()];
-                case 20:
-                    _a.sent();
                     //wait and check if the new precioActual is equal to precioActualString}
                     return [4 /*yield*/, driver.sleep(1000)];
-                case 21:
+                case 19:
                     //wait and check if the new precioActual is equal to precioActualString}
                     _a.sent();
                     console.log("Chequeando puja realizada...");
                     return [4 /*yield*/, driver.findElement(selenium_webdriver_1.By.id('precioActual')).getText()];
+<<<<<<< HEAD
+                case 20:
+=======
                 case 22:
+>>>>>>> main
                     precioActual2 = _a.sent();
                     return [2 /*return*/, precioActual2.split('$')[1] === precioActualString];
-                case 23: return [2 /*return*/, false];
-                case 24: return [3 /*break*/, 26];
-                case 25:
+                case 21: return [2 /*return*/, false];
+                case 22: return [3 /*break*/, 24];
+                case 23:
                     error_5 = _a.sent();
                     console.error('Error:', error_5);
                     return [2 /*return*/, false];
-                case 26: return [2 /*return*/];
+                case 24: return [2 /*return*/];
             }
         });
     });
@@ -541,6 +539,8 @@ function executeTests() {
                     testFunctions = [loginTest, registerTest, crearProductoTest, eliminarProductoTest, realizarPujaTest];
                     testCounter = testFunctions.length;
                     chromeOptions = new chrome_1.Options();
+                    chromeOptions.addArguments("--headless=new");
+                    chromeOptions.addArguments("--window-size=1920,1080");
                     return [4 /*yield*/, new selenium_webdriver_1.Builder()
                             .forBrowser('chrome')
                             .setChromeOptions(chromeOptions)
