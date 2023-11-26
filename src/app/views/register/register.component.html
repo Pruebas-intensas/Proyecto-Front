@@ -14,7 +14,7 @@
 
                             <!-- NOMBRE -->
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                <input type="text" class="form-control form-control-user" id="FirstName"
                                     placeholder="Nombre" formControlName="nombre" name="nombre">
                                 <div *ngIf="registroForm.controls['nombre'].invalid && (registroForm.controls['nombre'].dirty || registroForm.controls['nombre'].touched)"
                                     class="alert alert-danger">
@@ -29,7 +29,7 @@
                             <!-- APELLIDO -->
 
                             <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                <input type="text" class="form-control form-control-user" id="LastName"
                                     placeholder="Apellido" formControlName="apellido">
                                 <div *ngIf="registroForm.controls['apellido'].invalid && (registroForm.controls['apellido'].dirty || registroForm.controls['apellido'].touched)"
                                     class="alert alert-danger">
@@ -46,7 +46,7 @@
                         <!-- EMAIL -->
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                <input type="text" class="form-control form-control-user" id="InputEmail"
                                 placeholder="Correo Electrónico" formControlName="email" name="email">
                                 <div *ngIf="registroForm.controls['email'].invalid && (registroForm.controls['email'].dirty || registroForm.controls['email'].touched)"
                                     class="alert alert-danger">
@@ -61,7 +61,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="password" class="form-control form-control-user"
-                                    id="exampleInputPassword" placeholder="Contraseña" formControlName="password"
+                                    id="InputPassword" placeholder="Contraseña" formControlName="password"
                                     name="password">
                                 <div *ngIf="registroForm.controls['password'].invalid && (registroForm.controls['password'].dirty || registroForm.controls['password'].touched)"
                                     class="alert alert-danger">
@@ -75,7 +75,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <input type="password" class="form-control form-control-user"
-                                    id="exampleRepeatPassword" placeholder="Repetir Contraseña"
+                                    id="RepeatPassword" placeholder="Repetir Contraseña"
                                     formControlName="cnfPass" name="password">
                                 <div *ngIf="registroForm.controls['cnfPass'].invalid && (registroForm.controls['cnfPass'].dirty || registroForm.controls['cnfPass'].touched)"
                                     class="alert alert-danger">
@@ -96,7 +96,7 @@
                             Registrar Cuenta
                         </button>
                         <script>
-                            var input = document.getElementById("exampleRepeatPassword");
+                            var input = document.getElementById("RepeatPassword");
                             input.addEventListener("keypress", function (event) {
                                 if (event.keyCode === 13) {
                                     event.preventDefault();
