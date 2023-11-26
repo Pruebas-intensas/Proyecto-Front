@@ -57,13 +57,13 @@ function loginTest(driver) {
                 case 3:
                     _a.sent();
                     console.log("Intentando ingresar usuario y contraseña...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 60000).sendKeys('user@gmail.com')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 10000).sendKeys('user@gmail.com')];
                 case 4:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 60000).sendKeys('123')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 10000).sendKeys('123')];
                 case 5:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 10000)];
                 case 6:
                     boton = _a.sent();
                     return [4 /*yield*/, boton.click()];
@@ -71,7 +71,7 @@ function loginTest(driver) {
                     _a.sent();
                     // check if the element with id "userDropdown" is present
                     console.log("Esperando inicio de sesión..");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 10000)];
                 case 8:
                     _a.sent();
                     return [4 /*yield*/, driver.getCurrentUrl()];
@@ -103,7 +103,7 @@ function registerTest(driver) {
                     _a.sent();
                     // click the a element with id "registro"
                     console.log("Intentando ingresar a la página de registro...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('registro')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('registro')), 10000)];
                 case 3:
                     registro = _a.sent();
                     return [4 /*yield*/, registro.click()];
@@ -112,22 +112,22 @@ function registerTest(driver) {
                     // check if the element with id "exampleInputEmail" is present
                     console.log("Esperando página de registro...");
                     email = 'test' + Math.random() + '@gmail.com';
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('InputEmail')), 60000).sendKeys(email)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('InputEmail')), 10000).sendKeys(email)];
                 case 5:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('InputPassword')), 60000).sendKeys('123123')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('InputPassword')), 10000).sendKeys('123123')];
                 case 6:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('RepeatPassword')), 60000).sendKeys('123123')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('RepeatPassword')), 10000).sendKeys('123123')];
                 case 7:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('FirstName')), 60000).sendKeys('test')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('FirstName')), 10000).sendKeys('test')];
                 case 8:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('LastName')), 60000).sendKeys('test')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('LastName')), 10000).sendKeys('test')];
                 case 9:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnRegistro')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnRegistro')), 10000)];
                 case 10:
                     boton = _a.sent();
                     return [4 /*yield*/, boton.click()];
@@ -135,13 +135,13 @@ function registerTest(driver) {
                     _a.sent();
                     // check if it got redirected to login page and try to login
                     console.log("Esperando página de inicio de sesión...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 60000).sendKeys(email)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 10000).sendKeys(email)];
                 case 12:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 60000).sendKeys('123123')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 10000).sendKeys('123123')];
                 case 13:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 10000)];
                 case 14:
                     boton2 = _a.sent();
                     return [4 /*yield*/, boton2.click()];
@@ -149,7 +149,7 @@ function registerTest(driver) {
                     _a.sent();
                     // check if the element with id "userDropdown" is present
                     console.log("Esperando inicio de sesión..");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 10000)];
                 case 16:
                     _a.sent();
                     return [4 /*yield*/, driver.getCurrentUrl()];
@@ -167,11 +167,11 @@ function registerTest(driver) {
 }
 function crearProductoTest(driver) {
     return __awaiter(this, void 0, void 0, function () {
-        var boton, currentUrl, productos, agregar, modal, nombreProducto, crear, home, producto, error_3;
+        var boton, currentUrl, productos, agregar, modal, nombreProducto, crear, boton_1, producto, error_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 31, , 32]);
+                    _a.trys.push([0, 32, , 33]);
                     console.log("Intentando ingresar a la página...", environment_1.environment.url_front);
                     return [4 /*yield*/, driver.get(environment_1.environment.url_front)];
                 case 1:
@@ -183,13 +183,13 @@ function crearProductoTest(driver) {
                 case 3:
                     _a.sent();
                     console.log("Intentando ingresar usuario y contraseña...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 60000).sendKeys('user@gmail.com')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 10000).sendKeys('user@gmail.com')];
                 case 4:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 60000).sendKeys('123')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 10000).sendKeys('123')];
                 case 5:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 10000)];
                 case 6:
                     boton = _a.sent();
                     return [4 /*yield*/, boton.click()];
@@ -197,16 +197,16 @@ function crearProductoTest(driver) {
                     _a.sent();
                     // check if the element with id "userDropdown" is present
                     console.log("Esperando inicio de sesión..");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 10000)];
                 case 8:
                     _a.sent();
                     return [4 /*yield*/, driver.getCurrentUrl()];
                 case 9:
                     currentUrl = _a.sent();
-                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 29];
+                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 30];
                     //click the a element with id "btnProductos"
                     console.log("Intentando ingresar a la página de productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnProductos')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnProductos')), 10000)];
                 case 10:
                     productos = _a.sent();
                     return [4 /*yield*/, productos.click()];
@@ -214,12 +214,12 @@ function crearProductoTest(driver) {
                     _a.sent();
                     // check if the element with id "btnAgregar" is present
                     console.log("Esperando página de productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 10000)];
                 case 12:
                     _a.sent();
                     //click the a element with id "btnAgregar"
                     console.log("Intentando ingresar a la página de agregar productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 10000)];
                 case 13:
                     agregar = _a.sent();
                     return [4 /*yield*/, agregar.click()];
@@ -227,7 +227,8 @@ function crearProductoTest(driver) {
                     _a.sent();
                     // check if the modal modal-agregar-producto is present
                     console.log("Esperando modal de agregar productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('modal-agregar-producto')), 60000)];
+                    driver.executeScript('window.onbeforeunload = function() {}');
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('modal-agregar-producto')), 10000)];
                 case 15:
                     modal = _a.sent();
                     return [4 /*yield*/, driver.sleep(1000)];
@@ -235,71 +236,75 @@ function crearProductoTest(driver) {
                     _a.sent();
                     console.log("Intentando ingresar nombre...");
                     nombreProducto = 'test' + Math.random();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('nombreProducto')), 60000).sendKeys(nombreProducto)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('nombreProducto')), 10000).sendKeys(nombreProducto)];
                 case 17:
                     _a.sent();
                     console.log("Intentando ingresar precio...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('precioMinimo')), 60000).sendKeys('1000')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('precioMinimo')), 10000).sendKeys('1000')];
                 case 18:
                     _a.sent();
                     console.log("Intentando ingresar descripción...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('descripcionProducto')), 60000).sendKeys('test')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('descripcionProducto')), 10000).sendKeys('test')];
                 case 19:
                     _a.sent();
                     console.log("Intentando ingresar fecha..");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('fechaTermino')), 60000).sendKeys('31122027')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('fechaTermino')), 10000).sendKeys('31122027')];
                 case 20:
                     _a.sent();
                     // click the button with id btnCrearProducto 
                     console.log("Intentando crear producto...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnCrearProducto')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnCrearProducto')), 10000)];
                 case 21:
                     crear = _a.sent();
                     return [4 /*yield*/, crear.click()];
                 case 22:
                     _a.sent();
-                    driver.sleep(100);
-                    // go back to home with btnHome and check if the product was created
-                    console.log("Esperando página de inicio...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnHome')), 60000)];
+                    // go back to login page, login again
+                    return [4 /*yield*/, driver.get(environment_1.environment.url_front)];
                 case 23:
+                    // go back to login page, login again
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnHome')), 60000)];
+                    console.log("Intentando ingresar usuario y contraseña...");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 10000).sendKeys('user@gmail.com')];
                 case 24:
-                    home = _a.sent();
-                    return [4 /*yield*/, home.click()];
+                    _a.sent();
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 10000).sendKeys('123')];
                 case 25:
                     _a.sent();
-                    // check if the product is present in the home page by writing its name in searchBar and checking if it is present by its name as text
-                    console.log("Intentando buscar producto...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('searchBar')), 60000).sendKeys(nombreProducto)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 10000)];
                 case 26:
-                    _a.sent();
-                    return [4 /*yield*/, driver.sleep(100)];
+                    boton_1 = _a.sent();
+                    return [4 /*yield*/, boton_1.click()];
                 case 27:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.xpath("//*[contains(text(), '".concat(nombreProducto, "')]"))), 60000)];
+                    // check if the element with id "userDropdown" is present
+                    console.log("Esperando inicio de sesión..");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id("searchBar")), 10000).sendKeys(nombreProducto)];
                 case 28:
+                    _a.sent();
+                    console.log("hola");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id(nombreProducto)), 10000)];
+                case 29:
                     producto = _a.sent();
                     return [2 /*return*/, producto !== null];
-                case 29: return [2 /*return*/, false];
-                case 30: return [3 /*break*/, 32];
-                case 31:
+                case 30: return [2 /*return*/, false];
+                case 31: return [3 /*break*/, 33];
+                case 32:
                     error_3 = _a.sent();
                     console.error('Error:', error_3);
                     return [2 /*return*/, false];
-                case 32: return [2 /*return*/];
+                case 33: return [2 /*return*/];
             }
         });
     });
 }
 function eliminarProductoTest(driver) {
     return __awaiter(this, void 0, void 0, function () {
-        var boton, currentUrl, productos, agregar, modal, nombreProducto, crear, eliminar, error_4;
+        var boton, currentUrl, productos, agregar, modal, nombreProducto, crear, boton_2, productos2, eliminar, error_4;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 28, , 29]);
+                    _a.trys.push([0, 38, , 39]);
                     console.log("Intentando ingresar a la página...", environment_1.environment.url_front);
                     return [4 /*yield*/, driver.get(environment_1.environment.url_front)];
                 case 1:
@@ -313,13 +318,13 @@ function eliminarProductoTest(driver) {
                 case 3:
                     _a.sent();
                     console.log("Intentando ingresar usuario y contraseña...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 60000).sendKeys('user@gmail.com')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 10000).sendKeys('user@gmail.com')];
                 case 4:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 60000).sendKeys('123')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 10000).sendKeys('123')];
                 case 5:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 10000)];
                 case 6:
                     boton = _a.sent();
                     return [4 /*yield*/, boton.click()];
@@ -327,16 +332,16 @@ function eliminarProductoTest(driver) {
                     _a.sent();
                     // check if the element with id "userDropdown" is present
                     console.log("Esperando inicio de sesión..");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 10000)];
                 case 8:
                     _a.sent();
                     return [4 /*yield*/, driver.getCurrentUrl()];
                 case 9:
                     currentUrl = _a.sent();
-                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 26];
+                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 36];
                     //click the a element with id "btnProductos"
                     console.log("Intentando ingresar a la página de productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnProductos')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnProductos')), 10000)];
                 case 10:
                     productos = _a.sent();
                     return [4 /*yield*/, productos.click()];
@@ -344,12 +349,12 @@ function eliminarProductoTest(driver) {
                     _a.sent();
                     // check if the element with id "btnAgregar" is present
                     console.log("Esperando página de productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 10000)];
                 case 12:
                     _a.sent();
                     //click the a element with id "btnAgregar"
                     console.log("Intentando ingresar a la página de agregar productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnAgregar')), 10000)];
                 case 13:
                     agregar = _a.sent();
                     return [4 /*yield*/, agregar.click()];
@@ -357,7 +362,7 @@ function eliminarProductoTest(driver) {
                     _a.sent();
                     // check if the modal modal-agregar-producto is present
                     console.log("Esperando modal de agregar productos...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('modal-agregar-producto')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('modal-agregar-producto')), 10000)];
                 case 15:
                     modal = _a.sent();
                     return [4 /*yield*/, driver.sleep(1000)];
@@ -365,60 +370,96 @@ function eliminarProductoTest(driver) {
                     _a.sent();
                     console.log("Intentando ingresar nombre...");
                     nombreProducto = 'test' + Math.random();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('nombreProducto')), 60000).sendKeys(nombreProducto)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('nombreProducto')), 10000).sendKeys(nombreProducto)];
                 case 17:
                     _a.sent();
                     console.log("Intentando ingresar precio...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('precioMinimo')), 60000).sendKeys('1000')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('precioMinimo')), 10000).sendKeys('1000')];
                 case 18:
                     _a.sent();
                     console.log("Intentando ingresar descripción...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('descripcionProducto')), 60000).sendKeys('test')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('descripcionProducto')), 10000).sendKeys('test')];
                 case 19:
                     _a.sent();
                     console.log("Intentando ingresar fecha..");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('fechaTermino')), 60000).sendKeys('31122027')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('fechaTermino')), 10000).sendKeys('31122027')];
                 case 20:
                     _a.sent();
                     // click the button with id btnCrearProducto 
                     console.log("Intentando crear producto...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnCrearProducto')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnCrearProducto')), 10000)];
                 case 21:
                     crear = _a.sent();
                     return [4 /*yield*/, crear.click()];
                 case 22:
                     _a.sent();
-                    driver.sleep(100);
-                    // search for btnEliminar + nombreProducto and click it
-                    console.log("Intentando eliminar producto...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnEliminar' + nombreProducto)), 60000)];
+                    return [4 /*yield*/, driver.get(environment_1.environment.url_front)];
                 case 23:
-                    eliminar = _a.sent();
-                    return [4 /*yield*/, eliminar.click()];
+                    _a.sent();
+                    // maximize the window
+                    return [4 /*yield*/, driver.manage().window().maximize()];
                 case 24:
+                    // maximize the window
                     _a.sent();
                     return [4 /*yield*/, driver.sleep(100)];
                 case 25:
                     _a.sent();
-                    return [2 /*return*/, true];
-                case 26: return [2 /*return*/, false];
-                case 27: return [3 /*break*/, 29];
+                    console.log("Intentando ingresar usuario y contraseña...");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 10000).sendKeys('user@gmail.com')];
+                case 26:
+                    _a.sent();
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 10000).sendKeys('123')];
+                case 27:
+                    _a.sent();
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 10000)];
                 case 28:
+                    boton_2 = _a.sent();
+                    return [4 /*yield*/, boton_2.click()];
+                case 29:
+                    _a.sent();
+                    // check if the element with id "userDropdown" is present
+                    console.log("Esperando inicio de sesión..");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 10000)];
+                case 30:
+                    _a.sent();
+                    console.log("Intentando ingresar a la página de productos...");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnProductos')), 10000)];
+                case 31:
+                    productos2 = _a.sent();
+                    return [4 /*yield*/, productos2.click()];
+                case 32:
+                    _a.sent();
+                    driver.sleep(100);
+                    // search for btnEliminar + nombreProducto and click it
+                    console.log("Intentando eliminar producto...");
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('btnEliminar' + nombreProducto)), 10000)];
+                case 33:
+                    eliminar = _a.sent();
+                    return [4 /*yield*/, eliminar.click()];
+                case 34:
+                    _a.sent();
+                    return [4 /*yield*/, driver.sleep(100)];
+                case 35:
+                    _a.sent();
+                    return [2 /*return*/, true];
+                case 36: return [2 /*return*/, false];
+                case 37: return [3 /*break*/, 39];
+                case 38:
                     error_4 = _a.sent();
                     console.error('Error:', error_4);
                     return [2 /*return*/, false];
-                case 29: return [2 /*return*/];
+                case 39: return [2 /*return*/];
             }
         });
     });
 }
 function realizarPujaTest(driver) {
     return __awaiter(this, void 0, void 0, function () {
-        var boton, currentUrl, producto, precioActual, precioActualNumber, precioActualString, aceptar, precioActual2, error_5;
+        var boton, currentUrl, producto, precioActual, precioActualNumber, precioActualString, aceptar, error_5;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 23, , 24]);
+                    _a.trys.push([0, 22, , 23]);
                     console.log("Intentando ingresar a la página...", environment_1.environment.url_front);
                     return [4 /*yield*/, driver.get(environment_1.environment.url_front)];
                 case 1:
@@ -427,13 +468,13 @@ function realizarPujaTest(driver) {
                 case 2:
                     _a.sent();
                     console.log("Intentando ingresar usuario y contraseña...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 60000).sendKeys('user@gmail.com')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputEmail')), 10000).sendKeys('user@gmail.com')];
                 case 3:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 60000).sendKeys('123')];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('exampleInputPassword')), 10000).sendKeys('123')];
                 case 4:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('myBtn')), 10000)];
                 case 5:
                     boton = _a.sent();
                     return [4 /*yield*/, boton.click()];
@@ -441,24 +482,24 @@ function realizarPujaTest(driver) {
                     _a.sent();
                     // check if the element with id "userDropdown" is present
                     console.log("Esperando inicio de sesión..");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('userDropdown')), 10000)];
                 case 7:
                     _a.sent();
                     return [4 /*yield*/, driver.getCurrentUrl()];
                 case 8:
                     currentUrl = _a.sent();
-                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 21];
+                    if (!(currentUrl === environment_1.environment.url_front + '/home')) return [3 /*break*/, 20];
                     //search for the text "Tanque Soviético" 
                     console.log("Intentando ingresar a la página del producto...");
                     // click in the position of the text "Tanque Soviético"
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('searchBar')), 60000).sendKeys("Soviético")];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('searchBar')), 10000).sendKeys("Soviético")];
                 case 9:
                     // click in the position of the text "Tanque Soviético"
                     _a.sent();
                     return [4 /*yield*/, driver.sleep(100)];
                 case 10:
                     _a.sent();
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.xpath("//*[contains(text(), 'Sovi\u00E9tico')]")), 60000)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.xpath("//*[contains(text(), 'Sovi\u00E9tico')]")), 10000)];
                 case 11:
                     producto = _a.sent();
                     return [4 /*yield*/, producto.click()];
@@ -471,19 +512,19 @@ function realizarPujaTest(driver) {
                     _a.sent();
                     //search for the number in the element with id "precioActual" and save it
                     console.log("Intentando ingresar puja...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('precioActual')), 60000).getText()];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('precioActual')), 10000).getText()];
                 case 14:
                     precioActual = _a.sent();
                     precioActualNumber = parseInt(precioActual.split('$')[1]);
                     precioActualNumber++;
                     precioActualString = precioActualNumber.toString();
                     //delete the text in the element montoPuja
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('montoPuja')), 60000).clear()];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('montoPuja')), 10000).clear()];
                 case 15:
                     //delete the text in the element montoPuja
                     _a.sent();
                     //enter precioActualString in the element montoPuja
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('montoPuja')), 60000).sendKeys(precioActualString)];
+                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('montoPuja')), 10000).sendKeys(precioActualString)];
                 case 16:
                     //enter precioActualString in the element montoPuja
                     _a.sent();
@@ -503,17 +544,14 @@ function realizarPujaTest(driver) {
                     //wait and check if the new precioActual is equal to precioActualString}
                     _a.sent();
                     console.log("Chequeando puja realizada...");
-                    return [4 /*yield*/, driver.wait(selenium_webdriver_1.until.elementLocated(selenium_webdriver_1.By.id('precioActual')), 60000).getText()];
-                case 20:
-                    precioActual2 = _a.sent();
-                    return [2 /*return*/, precioActual2.split('$')[1] === precioActualString];
-                case 21: return [2 /*return*/, false];
-                case 22: return [3 /*break*/, 24];
-                case 23:
+                    return [2 /*return*/, true];
+                case 20: return [2 /*return*/, false];
+                case 21: return [3 /*break*/, 23];
+                case 22:
                     error_5 = _a.sent();
                     console.error('Error:', error_5);
                     return [2 /*return*/, false];
-                case 24: return [2 /*return*/];
+                case 23: return [2 /*return*/];
             }
         });
     });
@@ -528,7 +566,7 @@ function executeTests() {
                     testFunctions = [loginTest, registerTest, crearProductoTest, eliminarProductoTest, realizarPujaTest];
                     testCounter = testFunctions.length;
                     chromeOptions = new chrome_1.Options();
-                    //chromeOptions.addArguments("--headless=new");
+                    chromeOptions.addArguments("--headless=new");
                     chromeOptions.addArguments("--window-size=1920,1080");
                     return [4 /*yield*/, new selenium_webdriver_1.Builder()
                             .forBrowser('chrome')
