@@ -279,7 +279,7 @@ async function executeTests() {
     let testCounter = testFunctions.length;
 
     const chromeOptions = new Options();
-    //chromeOptions.addArguments("--headless=new");
+    chromeOptions.addArguments("--headless=new");
     chromeOptions.addArguments("--window-size=1920,1080");
     const driver: WebDriver = await new Builder()
         .forBrowser('chrome')
